@@ -1,6 +1,6 @@
 <div class="p-3">
   <%= button_to({ action: 'create' }, params: { title: '新建聊天' }, form: { data: { turbo_frame: 'main', turbo: false } }, class: 'button is-fullwidth is-info') do %>
-    <i class="fa-solid fa-plus"></i>
+    <%= svg_tag 'plus' %>
     <span class="ml-1"><%= t('.create.title') %></span>
   <% end %>
 </div>
