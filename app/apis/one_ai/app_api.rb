@@ -24,18 +24,20 @@ module OneAi
       chat(messages: messages)
     end
 
-    def chat(messages: [], model: 'moonshot-v1-8k', **options)
+    def chat(messages: [], **options)
       post(
         'chat/completions',
         origin: @app.base_url.presence || BASE,
-        model: model,
         messages: messages,
+        headers: {
+          'Content-Type' => 'application/json'
+        },
         **options
       )
     end
 
-    def chat_stream(messages: [], model: 'moonshot-v1-8k', **options)
-      result = post_stream('chat/completions', origin: @app.base_url.presence || BASE, model: model, messages: messages, stream: true, **options)
+    def chat_stream(messages: [], **options)
+      result = post_stream('chat/completions', origin: @app.base_url.presence || BASE, messages: messages, stream: true, **options)
 
       line = ''.b
       result.each do |chunk|
