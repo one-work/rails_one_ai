@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 module OneAi
-  class KimiApi < AppApi
+  class DoubaoApi < AppApi
     BASE = 'https://api.moonshot.cn/v1/'
 
   end

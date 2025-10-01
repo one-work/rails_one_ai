@@ -2,7 +2,6 @@
 
 module OneAi
   class AppApi < BaseApi
-    BASE = 'https://api.moonshot.cn/v1/'
     START_CHAR = 'data: '
     FINISH_CHAR = "\n\n"
 
