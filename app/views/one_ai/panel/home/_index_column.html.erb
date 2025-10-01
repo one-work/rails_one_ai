@@ -1,0 +1,8 @@
+<div class="grid">
+  <%= link_to({ controller: 'one_ai/panel/apps' }, data: { turbo_frame: 'body', action: 'menu-popup#enter' }, class: active_helper(controllers: 'one_ai/panel/apps', item: 'cell button is-fullwidth', active: 'cell button is-fullwidth is-active')) do %>
+    <span><%= t('one_ai.panel.apps.index.title') %></span>
+  <% end %>
+  <%= link_to({ controller: 'one_ai/panel/systems' }, data: { turbo_frame: 'body', action: 'menu-popup#enter' }, class: active_helper(controllers: 'one_ai/panel/systems', item: 'cell button is-fullwidth', active: 'cell button is-fullwidth is-active')) do %>
+    <span><%= t('one_ai.panel.systems.index.title') %></span>
+  <% end %>
+</div>
