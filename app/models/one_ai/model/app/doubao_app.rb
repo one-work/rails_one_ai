@@ -14,12 +14,14 @@ module OneAi
     end
 
     def image_5x4(prompt)
+      context = "生成一张海报，展示门店形象，整体的货架，温暖的灯光，能激发顾客的购买欲望，门头显示“#{prompt}”字样，不需要AI生成水印"
+
       r = api.image(
         model: 'doubao-seedream-4-0-250828',
-        prompt: prompt,
+        prompt:  context,
         size: '1280x1024'
       )
-      
+
       r.dig('data')
     end
 
