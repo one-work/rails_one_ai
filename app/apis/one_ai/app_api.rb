@@ -6,11 +6,11 @@ module OneAi
     FINISH_CHAR = "\n\n"
 
     def file_create(file, content_type:, **options)
-      post_file 'files', file, file_key: 'file', purpose: 'file-extract', origin: BASE, content_type: content_type, **options
+      post_file 'files', file, file_key: 'file', purpose: 'file-extract', origin: @app.base_url, content_type: content_type, **options
     end
 
     def file_content(file_id)
-      get "files/#{file_id}/content", origin: @app.base_url.presence || BASE
+      get "files/#{file_id}/content", origin: @app.base_url
     end
 
     def file_parse(file, content_type:, **options)
@@ -26,7 +26,7 @@ module OneAi
     def chat(messages: [], **options)
       post(
         'chat/completions',
-        origin: @app.base_url.presence || BASE,
+        origin: @app.base_url,
         messages: messages,
         headers: {
           'Content-Type' => 'application/json'
@@ -36,7 +36,7 @@ module OneAi
     end
 
     def chat_stream(messages: [], **options)
-      result = post_stream('chat/completions', origin: @app.base_url.presence || BASE, messages: messages, stream: true, **options)
+      result = post_stream('chat/completions', origin: @app.base_url, messages: messages, stream: true, **options)
 
       line = ''.b
       result.each do |chunk|

@@ -7,7 +7,6 @@ module OneAi
       attribute :name, :string
       attribute :appid, :string, index: true
       attribute :secret, :string
-      attribute :base_url, :string
       attribute :position, :integer
 
       belongs_to :organ, class_name: 'Org::Organ', optional: true

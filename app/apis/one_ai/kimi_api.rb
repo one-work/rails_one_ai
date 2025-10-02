@@ -2,7 +2,6 @@
 
 module OneAi
   class KimiApi < AppApi
-    BASE = 'https://api.moonshot.cn/v1/'
 
   end
 end
