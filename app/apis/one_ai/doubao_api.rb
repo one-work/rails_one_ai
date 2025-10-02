@@ -2,7 +2,7 @@
 
 module OneAi
   class DoubaoApi < AppApi
-    BASE = 'https://api.moonshot.cn/v1/'
+    BASE = 'https://ark.cn-beijing.volces.com/api/v3/'
 
   end
 end
