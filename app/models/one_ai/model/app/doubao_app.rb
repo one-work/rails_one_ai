@@ -19,7 +19,8 @@ module OneAi
       r = api.image(
         model: 'doubao-seedream-4-0-250828',
         prompt:  context,
-        size: '1280x1024'
+        size: '1280x1024',
+        watermark: false
       )
 
       r.dig('data')
