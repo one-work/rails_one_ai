@@ -13,13 +13,13 @@ module OneAi
       @api = DoubaoApi.new(self)
     end
 
-    def image_5x4(prompt)
+    def image_4x5(prompt)
       context = "生成一张海报，展示门店形象，整体的货架，温暖的灯光，能激发顾客的购买欲望，门头显示“#{prompt}”字样"
 
       r = api.image(
         model: 'doubao-seedream-4-0-250828',
         prompt:  context,
-        size: '1280x1024',
+        size: '1280x1600',
         watermark: false
       )
 
