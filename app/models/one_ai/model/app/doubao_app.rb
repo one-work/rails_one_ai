@@ -2,6 +2,11 @@
 
 module OneAi
   module Model::App::DoubaoApp
+    extend ActiveSupport::Concern
+
+    included do
+      attribute :base_url, :string, default: 'https://ark.cn-beijing.volces.com/api/v3/'
+    end
 
     def api
       return @api if defined? @api
