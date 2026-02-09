@@ -4,7 +4,7 @@ module OneAi
   class BaseApi
     include CommonApi
 
-    def with_access_token(params: {}, headers: {}, payload: {}, with_options: {})
+    def with_access_token(params: {}, headers: {}, payload: {}, with_options: {}, **)
       @client = @client.plugin(:auth).bearer_auth @app.secret
       yield
     end
